@@ -1,5 +1,6 @@
 import CustomizeLinks from './components/CustomizeLinks';
 import NavBar from './components/Navbar';
+import ProfileCard from './components/ProfileCard';
 // import AuthComponent from './pages/Auth/Auth';
 import { useStore } from './store/store';
 
@@ -9,7 +10,10 @@ function App() {
   return (
     <div className="h-screen w-screen">
       <NavBar />
-      <CustomizeLinks />
+      <br />
+      <br />
+      <ProfileCard />
+      {/* <CustomizeLinks /> */}
       {/* <AuthComponent /> */}
     </div>
   );
