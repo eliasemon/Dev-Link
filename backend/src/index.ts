@@ -6,7 +6,6 @@ import path from 'path';
 import app, { initializeRoute } from '@/app';
 import logger from '@/utils/logger';
 import connectToDB from '@/db';
-import { initAdmin } from './lib/firebase/fireBaseConnection';
 
 export const server: http.Server = http.createServer(app);
 export const io = new Server(server);
@@ -27,7 +26,6 @@ BigInt.prototype.toJSON = function (): string {
 async function startServer() {
   try {
     await connectToDB();
-    await initAdmin();
     await initializeRoute();
     server.listen(PORT, () => {
       logger.info(`Server is listening on http://localhost:${PORT}`);
