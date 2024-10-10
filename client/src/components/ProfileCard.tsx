@@ -1,5 +1,3 @@
-import React from 'react';
-
 const ProfileCard = () => {
   return (
     <div className="w-full max-w-sm mx-auto bg-white border border-stone-900 rounded-[40px] p-3">

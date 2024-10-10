@@ -1,6 +1,7 @@
-import CustomizeLinks from './components/CustomizeLinks';
+// import CustomizeLinks from './components/CustomizeLinks';
+import FileUpload from './components/FileUpload';
 import NavBar from './components/Navbar';
-import ProfileCard from './components/ProfileCard';
+// import ProfileCard from './components/ProfileCard';
 // import AuthComponent from './pages/Auth/Auth';
 import { useStore } from './store/store';
 
@@ -12,7 +13,8 @@ function App() {
       <NavBar />
       <br />
       <br />
-      <ProfileCard />
+      <FileUpload />
+      {/* <ProfileCard /> */}
       {/* <CustomizeLinks /> */}
       {/* <AuthComponent /> */}
     </div>
