@@ -31,14 +31,16 @@ export const updateUser = async (
   next: NextFunction,
 ) => {
   try {
-    const { userId } = req.params;
-    const { fullName, gender, profilePic } = req.body;
+    const userId = req.user?._id;
+    const { firstName, lastName, gender, profilePic, userEmail } = req.body;
 
     // Find the user and update only allowed fields
     const updatedUser = await User.findByIdAndUpdate(
       userId,
       {
-        fullName,
+        userEmail,
+        firstName,
+        lastName,
         gender,
         profilePic,
       },

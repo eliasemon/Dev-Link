@@ -1,7 +1,7 @@
 import mongoose, { Schema, Document, Types } from 'mongoose';
 
 // Define an interface representing a link object in DevLinks.
-interface ILink {
+export interface ILink {
   platform: string;
   link: string;
 }

@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { toast } from '@/components/ui/use-toast';
-import Spinner from '@/components/Sppinner';
+import Spinner from '@/components/Spinner';
 import { SignInSchema } from '@/valibot/SchemaTypes';
 import { PasswordInput } from '@/components/ui/custom/passwordInput';
 import PasswordComplexity from '@/components/PasswordComplexity';
@@ -48,7 +48,7 @@ const SignIn = () => {
   });
 
   // Zustand store actions and states
-  const setUser = useStore((state) => state.setUser);
+  const { setUser, setLinks } = useStore((action) => action);
 
   const { trigger, isMutating } = useSWRMutation(
     getApiUrl('auth/signin'),
@@ -61,15 +61,16 @@ const SignIn = () => {
       const response = await trigger(values); // API call with form data
 
       // After successful response, update Zustand store with user info
-      setUser({
-        _id: response._id,
-        token: response.token,
-        firstName: response.firstName,
-        lastName: response.lastName,
-        gender: response.gender,
-        userEmail: response.userEmail,
-        profilePic: response.profilePic,
-      });
+
+      const fetchLinks = await fetch(getApiUrl(`previewlinks/${response._id}`));
+      // console.log(fetchLinks);
+      if (fetchLinks.ok) {
+        const parsedLinks = await fetchLinks.json();
+        setLinks([...parsedLinks.links.links]);
+      } else {
+        setLinks([]);
+      }
+      setUser({ ...response });
 
       toast({
         variant: 'default',
@@ -87,47 +88,56 @@ const SignIn = () => {
   }
 
   return (
-    // Section 2
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
-        <FormField
-          control={form.control}
-          name="userEmail"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input
-                  type="email"
-                  placeholder="example@example.com"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
+      <form onSubmit={form.handleSubmit(onSubmit)}>
+        <div className="flex flex-col gap-6">
+          <FormField
+            control={form.control}
+            name="userEmail"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Email</FormLabel>
+                <FormControl>
+                  <Input
+                    type="email"
+                    placeholder="example@example.com"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="password"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Password</FormLabel>
+                <FormControl>
+                  <PasswordInput
+                    placeholder="****"
+                    type="password"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          {form.watch('password') && form.formState.dirtyFields.password && (
+            <PasswordComplexity password={form.getValues('password')} />
           )}
-        />
-        <FormField
-          control={form.control}
-          name="password"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Password</FormLabel>
-              <FormControl>
-                <PasswordInput placeholder="****" type="password" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        {form.watch('password') && form.formState.dirtyFields.password && (
-          <PasswordComplexity password={form.getValues('password')} />
-        )}
-        <Button variant="outline" type="submit" disabled={isMutating}>
-          {isMutating ? <Spinner /> : 'Submit'}
-        </Button>
+          <Button
+            className="w-full bg-primary-900 hover:bg-primary-700 text-white"
+            variant="secondary"
+            type="submit"
+            disabled={isMutating}
+          >
+            {isMutating ? <Spinner /> : 'Submit'}
+          </Button>
+        </div>
       </form>
-      {/* Section 3 */}
     </Form>
   );
 };

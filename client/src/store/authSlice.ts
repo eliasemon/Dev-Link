@@ -14,16 +14,19 @@ export interface AuthResponse {
 export type User = Omit<AuthResponse, '_id' | 'token'>;
 
 export interface AuthState {
-  user: AuthResponse | null;
-  setUser: (user: AuthResponse) => void;
+  user: Partial<AuthResponse> | null;
+  isProfileDraft: boolean;
+  setProfileDraft: (draft: boolean) => void;
+  setUser: (user: Partial<AuthResponse>) => void;
   clearUser: () => void;
 }
 
-/** ***********  ✨ Codeium Command ⭐  ************ */
-/** ****  d55e8270-cc65-4192-86b5-4bab10f9b32c  ****** */ export const createAuthSlice: StateCreator<
-  AuthState
-> = (set) => ({
+export const createAuthSlice: StateCreator<AuthState> = (set) => ({
   user: null,
-  setUser: (user: AuthResponse) => set({ user }),
+  isProfileDraft: false,
+  setProfileDraft: (draft: boolean) =>
+    set((state) => ({ ...state, isProfileDraft: draft })),
+  setUser: (user: Partial<AuthResponse>) =>
+    set((state) => ({ ...state, user: { ...state.user, ...user } })),
   clearUser: () => set({ user: null }),
 });

@@ -42,14 +42,12 @@ export const signup = async (
     if (newUser) {
       // Generate JWT token here
       const token = generateToken(newUser._id.toString());
-      res.cookie('jwt', token, {
-        maxAge: 15 * 24 * 60 * 60 * 1000, // MS
-      });
       await newUser.save();
 
       res.status(201).json({
         _id: newUser._id.toString(),
         token,
+        gender: newUser.gender,
         firstName: newUser.firstName,
         lastName: newUser.lastName,
         userEmail: newUser.userEmail,
@@ -82,15 +80,13 @@ export const signIn = async (
     }
 
     const token = generateToken(user._id.toString());
-    res.cookie('jwt', token, {
-      maxAge: 15 * 24 * 60 * 60 * 1000, // MS
-    });
 
     res.status(200).json({
       _id: user._id.toString(),
       firstName: user.firstName,
       lastName: user.lastName,
       token,
+      gender: user.gender,
       userEmail: user.userEmail,
       profilePic: user.profilePic,
     });

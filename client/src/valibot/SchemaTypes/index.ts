@@ -48,7 +48,39 @@ export const SignUpSchema = v.pipe(
   ),
 );
 
+export const ProfileUpdateSchema = v.object({
+  userEmail: EmailSchema,
+  firstName: v.pipe(
+    v.string(),
+    v.nonEmpty('Please enter your FirstName.'),
+    v.minLength(2, 'First Name Must Have Two characters or more'),
+    v.maxLength(10, 'First Name Max Length is 10'),
+  ),
+  lastName: v.pipe(
+    v.string(),
+    v.nonEmpty('Please enter your LastName.'),
+    v.minLength(2, 'Last Name Must Have Two characters or more'),
+    v.maxLength(10, 'Last Name Max Length is 10'),
+  ),
+  gender: v.string(),
+});
+
 export const SignInSchema = v.object({
   userEmail: EmailSchema,
   password: PasswordSchema,
 });
+
+export const LinkSchema = v.object({
+  platform: v.pipe(v.string(), v.nonEmpty('Platform is required')),
+  link: v.pipe(
+    v.string(),
+    v.nonEmpty('Link is required'),
+    v.url('Please enter a valid URL'),
+  ),
+});
+
+export const CustomizeLinksSchema = v.object({
+  links: v.array(LinkSchema),
+});
+
+export type CustomizeLinksFormData = v.InferOutput<typeof CustomizeLinksSchema>;
