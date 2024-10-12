@@ -12,12 +12,12 @@ export default {
       colors: {
         destructive: '#DC2626',
         primary: {
-          50: '#E6FEF3',
-          100: '#D6F8E8',
-          500: '#38CB89',
-          600: '#35BD80',
-          700: '#2D9F6C',
-          900: '#157449',
+          50: ' #edecff',
+          100: '#d5d2ff',
+          500: '#7a3bff',
+          600: '#5a2bbf',
+          700: '#411f8c',
+          900: '#3a1f7a',
         },
         nuetral: {
           50: '#F3F5F7',

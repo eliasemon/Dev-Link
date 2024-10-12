@@ -39,7 +39,7 @@ const NavBar = () => {
             <NavigationMenuItem>
               <Link
                 to={'/links'}
-                className={`text-base flex flex-row items-center justify-center gap-2 p-2 px-4 rounded-lg hover:text-primary-900 ${isLinkMatching ? 'bg-primary-100' : ''} hover:bg-primary-100`}
+                className={`text-base flex flex-row items-center justify-center gap-2 p-2 px-4 rounded-lg hover:text-primary-900 ${isLinkMatching ? 'bg-primary-100 text-primary-700' : ''} hover:bg-primary-100`}
               >
                 <FaLink />
                 <span className="hidden md:block">Links</span>
@@ -48,7 +48,7 @@ const NavBar = () => {
             <NavigationMenuItem>
               <Link
                 to={'/profile'}
-                className={`text-base flex flex-row items-center justify-center gap-2 p-2 px-4 rounded-lg hover:text-primary-900  ${isProfileMatching ? 'bg-primary-100' : ''} hover:bg-primary-100`}
+                className={`text-base flex flex-row items-center justify-center gap-2 p-2 px-4 rounded-lg hover:text-primary-900  ${isProfileMatching ? 'bg-primary-100 text-primary-700' : ''} hover:bg-primary-100`}
               >
                 <CgProfile />
                 <span className="hidden md:block"> ProfileDetails </span>
@@ -73,7 +73,7 @@ const NavBar = () => {
           </Button>
           <Link
             to={'/preview'}
-            className="text-base flex flex-row items-center justify-center gap-2 p-2 px-4 rounded-lg border border-primary-900 hover:text-white bg-primary-100 hover:bg-primary-900"
+            className="text-base flex flex-row items-center justify-center gap-2 p-2 px-4 rounded-lg border text-primary-500  hover:text-white border-primary-500 hover:bg-primary-900"
           >
             <FaEye className="md:hidden" />
             <span className="hidden md:block">Preview</span>
