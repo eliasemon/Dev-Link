@@ -451,3 +451,38 @@
 {"level":"info","message":"Routes added successfully","timestamp":"2024-10-12T07:00:24.689Z"}
 {"level":"info","message":"Server is listening on http://localhost:3000","timestamp":"2024-10-12T07:00:24.691Z"}
 {"level":"info","message":"{\"id\":\"45fdef0d-812a-4c66-9614-8459bc8b5d78\",\"ip\":\"::1\",\"method\":\"POST\",\"url\":\"/api/v1/protected/devlinks\",\"status\":\"201\",\"responseTime\":\"30.512\"}","timestamp":"2024-10-12T07:00:41.931Z"}
+{"level":"error","message":"Error connecting to Database","timestamp":"2024-10-12T11:09:37.372Z"}
+{"level":"info","message":"Database Connected Successfully!","timestamp":"2024-10-12T11:11:02.028Z"}
+{"level":"info","message":"Route  added with route.ts","timestamp":"2024-10-12T11:11:02.133Z"}
+{"level":"info","message":"Route /v1/auth added with route.ts","timestamp":"2024-10-12T11:11:02.849Z"}
+{"level":"info","message":"Route /v1/previewlinks added with route.ts","timestamp":"2024-10-12T11:11:03.398Z"}
+{"level":"info","message":"Middleware /v1/protected added with middleware.ts","timestamp":"2024-10-12T11:11:03.841Z"}
+{"level":"info","message":"Route /v1/upload added with route.ts","timestamp":"2024-10-12T11:11:04.196Z"}
+{"level":"info","message":"Route /v2/demo added with route.ts","timestamp":"2024-10-12T11:11:04.290Z"}
+{"level":"info","message":"Route /v1/protected/devlinks added with route.ts","timestamp":"2024-10-12T11:11:04.788Z"}
+{"level":"info","message":"Route /v1/protected/user added with route.ts","timestamp":"2024-10-12T11:11:05.247Z"}
+{"level":"info","message":"7 routes have been added","timestamp":"2024-10-12T11:11:05.248Z"}
+{"level":"info","message":"Routes added successfully","timestamp":"2024-10-12T11:11:05.248Z"}
+{"level":"info","message":"Server is listening on http://localhost:3000","timestamp":"2024-10-12T11:11:05.250Z"}
+{"level":"info","message":"Database Connected Successfully!","timestamp":"2024-10-12T11:31:34.354Z"}
+{"level":"info","message":"Route  added with route.ts","timestamp":"2024-10-12T11:31:34.454Z"}
+{"level":"info","message":"Route /v1/auth added with route.ts","timestamp":"2024-10-12T11:31:35.216Z"}
+{"level":"info","message":"Route /v1/previewlinks added with route.ts","timestamp":"2024-10-12T11:31:35.836Z"}
+{"level":"info","message":"Middleware /v1/protected added with middleware.ts","timestamp":"2024-10-12T11:31:36.334Z"}
+{"level":"info","message":"Route /v1/upload added with route.ts","timestamp":"2024-10-12T11:31:36.669Z"}
+{"level":"info","message":"Route /v2/demo added with route.ts","timestamp":"2024-10-12T11:31:36.771Z"}
+{"level":"info","message":"Route /v1/protected/devlinks added with route.ts","timestamp":"2024-10-12T11:31:37.269Z"}
+{"level":"info","message":"Route /v1/protected/user added with route.ts","timestamp":"2024-10-12T11:31:37.735Z"}
+{"level":"info","message":"7 routes have been added","timestamp":"2024-10-12T11:31:37.735Z"}
+{"level":"info","message":"Routes added successfully","timestamp":"2024-10-12T11:31:37.736Z"}
+{"level":"info","message":"Server is listening on http://localhost:3000","timestamp":"2024-10-12T11:31:37.738Z"}
+{"level":"info","message":"{\"id\":\"f759d49a-11d6-4432-8879-2c05fe9d2ca0\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/api/health\",\"status\":\"200\",\"responseTime\":\"2.858\"}","timestamp":"2024-10-12T11:35:54.979Z"}
+{"level":"info","message":"{\"id\":\"7ad8aa95-fc83-4bd9-8665-c1846ddf65d1\",\"ip\":\"::1\",\"method\":\"POST\",\"url\":\"/api/v1/auth/signup\",\"status\":\"201\",\"responseTime\":\"90.300\"}","timestamp":"2024-10-12T11:38:44.154Z"}
+{"level":"info","message":"{\"id\":\"7825115d-27a8-46cb-9c77-45b558a5feb3\",\"ip\":\"::1\",\"method\":\"POST\",\"url\":\"/api/v1/upload\",\"status\":\"200\",\"responseTime\":\"2056.888\"}","timestamp":"2024-10-12T11:39:03.557Z"}
+{"level":"info","message":"{\"id\":\"99c4ed6c-d056-492b-ba39-a0eb435483e0\",\"ip\":\"::1\",\"method\":\"PUT\",\"url\":\"/api/v1/protected/user/670a5fc4bb2eb4db207fc62c\",\"status\":\"200\",\"responseTime\":\"13.663\"}","timestamp":"2024-10-12T11:39:03.575Z"}
+{"level":"info","message":"{\"id\":\"1b1cec11-88c6-43f0-8f1a-99e8f4a506b5\",\"ip\":\"::1\",\"method\":\"POST\",\"url\":\"/api/v1/protected/devlinks\",\"status\":\"201\",\"responseTime\":\"11.787\"}","timestamp":"2024-10-12T11:52:45.445Z"}
+{"level":"info","message":"{\"id\":\"06d55d17-75b8-4b7a-a118-590d882b15c5\",\"ip\":\"::1\",\"method\":\"POST\",\"url\":\"/api/v1/auth/signup\",\"status\":\"400\",\"responseTime\":\"6.766\"}","timestamp":"2024-10-12T11:55:27.280Z"}
+{"level":"info","message":"{\"id\":\"cdf7d533-5e4c-47ca-a2d7-b04334ae7359\",\"ip\":\"::1\",\"method\":\"POST\",\"url\":\"/api/v1/auth/signup\",\"status\":\"400\",\"responseTime\":\"3.125\"}","timestamp":"2024-10-12T11:55:29.018Z"}
+{"level":"info","message":"{\"id\":\"576333dc-9bd4-4b75-8139-99f84e0bcd96\",\"ip\":\"::1\",\"method\":\"POST\",\"url\":\"/api/v1/auth/signup\",\"status\":\"201\",\"responseTime\":\"66.275\"}","timestamp":"2024-10-12T12:10:41.658Z"}
+{"level":"info","message":"{\"id\":\"0050ce37-c9d5-4073-8e7e-3711584884f4\",\"ip\":\"::1\",\"method\":\"POST\",\"url\":\"/api/v1/protected/devlinks\",\"status\":\"201\",\"responseTime\":\"7.400\"}","timestamp":"2024-10-12T12:26:17.667Z"}
+{"level":"info","message":"{\"id\":\"10335210-4c76-4fe1-a439-cc8a3b006716\",\"ip\":\"::1\",\"method\":\"PUT\",\"url\":\"/api/v1/protected/user/670a6741bb2eb4db207fc637\",\"status\":\"200\",\"responseTime\":\"7.074\"}","timestamp":"2024-10-12T12:26:44.844Z"}

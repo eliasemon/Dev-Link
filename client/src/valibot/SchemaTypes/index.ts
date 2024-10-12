@@ -19,6 +19,12 @@ export const EmailSchema = v.pipe(
   v.maxLength(40, 'email Max Length is 40'),
 );
 
+export enum Gender {
+  male = 'male',
+  female = 'female',
+  other = 'other',
+}
+
 export const SignUpSchema = v.pipe(
   v.object({
     userEmail: EmailSchema,
@@ -34,7 +40,7 @@ export const SignUpSchema = v.pipe(
       v.minLength(2, 'Last Name Must Have Two characters or more'),
       v.maxLength(10, 'Last Name Max Length is 10'),
     ),
-    gender: v.string(),
+    gender: v.enum(Gender),
     password: PasswordSchema,
     confirmPassword: v.string(),
   }),

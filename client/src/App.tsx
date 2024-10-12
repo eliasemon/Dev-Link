@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import CustomizeLinks from './components/CustomizeLinks/CustomizeLinks';
-import Layout from './components/Layout';
-import NavBar from './components/Navbar';
-import PreviewLinks from './components/PreviewLinks';
-import Profile from './components/Profile';
-import NotFound from './components/NotFound'; // New 404 component
-import { useStore } from './store/store';
+import CustomizeLinks from '@/pages/CustomizeLinks/CustomizeLinks';
+import Layout from '@/components/Layout';
+import NavBar from '@/components/Navbar';
+import PreviewLinks from '@/pages/PreviesLinks/PreviewLinks';
+import Profile from '@/pages/Profile';
+import NotFound from '@/pages/NotFound'; // New 404 component
+import { useStore } from '@/store/store';
 
 function App() {
   const isLoggedIn = useStore((state) => state.user?.token);

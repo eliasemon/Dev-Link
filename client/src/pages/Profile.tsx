@@ -24,10 +24,10 @@ import { ProfileUpdateSchema } from '@/valibot/SchemaTypes';
 import useSWRMutation from 'swr/mutation';
 import { getApiUrl } from '@/utils';
 import { useStore } from '@/store/store';
-import FileUpload, { IImperativeFileUpload } from './FileUpload';
+import FileUpload, { IImperativeFileUpload } from '@/components/FileUpload';
 import { useCallback, useEffect, useRef } from 'react';
 
-// API request function for sign-up
+// API request function for updating profile information
 async function profileInfoUpdateRequest(
   url: string,
   {
@@ -46,11 +46,12 @@ async function profileInfoUpdateRequest(
     body: JSON.stringify(arg),
   });
 
+  // Handle response error
   if (!response.ok) {
-    throw new Error('Failed to sign up');
+    throw new Error('Failed to update profile');
   }
 
-  return response.json(); // Expected response with user and token
+  return response.json(); // Expected response with updated user data
 }
 
 const Profile = () => {
@@ -66,17 +67,20 @@ const Profile = () => {
       gender: user?.gender || '',
     },
   });
+
   const { watch, getValues, setValue } = form;
   const fileUploadRef = useRef<IImperativeFileUpload>(null);
 
+  // Set profile picture preview and update profile draft state
   const signal = useCallback(() => {
     setProfileDraft(true);
     setUser({ profilePic: fileUploadRef.current?.preview || '' });
   }, []);
 
   useEffect(() => {
+    // Set initial preview of the profile picture
     fileUploadRef.current?.setPreview(user?.profilePic as string);
-  }, []);
+  }, [user?.profilePic]);
 
   useEffect(() => {
     const formUser = getValues();
@@ -84,9 +88,7 @@ const Profile = () => {
     if (Object.keys(JSON.parse(dirtyFieldsStr)).length > 0) {
       setProfileDraft(true);
     }
-    setUser({
-      ...formUser,
-    });
+    setUser({ ...formUser });
   }, [form.formState.isValidating, watch('gender')]);
 
   const { trigger, isMutating } = useSWRMutation(
@@ -97,6 +99,7 @@ const Profile = () => {
   // Section 1: Form submit handler
   async function onSubmit(values: v.InferOutput<typeof ProfileUpdateSchema>) {
     try {
+      // Handle file upload and update user profile
       const upload = (await fileUploadRef.current?.onUpload()) as {
         file: { publicUrl: string };
       };
@@ -113,15 +116,10 @@ const Profile = () => {
         profilePic: upload.file.publicUrl,
       }); // API call with form data
 
-      // Update Zustand store with user info
-
       setProfileDraft(false);
       setUser({ ...response });
 
-      toast({
-        variant: 'default',
-        description: 'Updated successfully',
-      });
+      toast({ variant: 'default', description: 'Updated successfully' });
     } catch (err: unknown) {
       if (err instanceof Error) {
         toast({
@@ -135,12 +133,12 @@ const Profile = () => {
 
   return (
     <div className="p-4 overflow-hidden">
-      <div>
+      <header>
         <h1 className="text-2xl font-bold mb-2">Profile Details</h1>
         <p className="text-neutral-500 mb-6">
           Add your details to create a personal touch to your profile.
         </p>
-      </div>
+      </header>
 
       {/* Show draft message if the profile is in draft mode */}
       {isProfileDraft && (
@@ -150,8 +148,8 @@ const Profile = () => {
         </div>
       )}
 
-      <div className=" text-neutral-500">
-        <div className="flex flex-col md:flex-row gap-2 justify-center items-start md:items-center  p-4 bg-neutral-100">
+      <div className="text-neutral-500">
+        <div className="flex flex-col md:flex-row gap-2 justify-center items-start md:items-center p-4 bg-neutral-100">
           <h1 className="md:w-1/5">Profile Picture</h1>
           <div className="2xl:w-3/5 md:w-3/5 lg:w-3/6 flex-grow">
             <FileUpload signal={signal} ref={fileUploadRef} />
@@ -164,59 +162,34 @@ const Profile = () => {
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <div className="bg-neutral-100 p-4 mt-6">
-              <FormField
-                key={'firstName'}
-                control={form.control}
-                name="firstName"
-                render={({ field }) => (
-                  <FormItem className="flex flex-col md:flex-row md:items-center flex-auto mb-4">
-                    <FormLabel className="md:w-1/5">First Name</FormLabel>
-                    <div className="md:w-4/5">
-                      <FormControl>
-                        <Input placeholder="Ex: John" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </div>
-                  </FormItem>
-                )}
-              />
-              <FormField
-                key={'lastName'}
-                control={form.control}
-                name="lastName"
-                render={({ field }) => (
-                  <FormItem className="flex flex-col md:flex-row md:items-center flex-auto mb-4">
-                    <FormLabel className="md:w-1/5">Last Name</FormLabel>
-                    <div className="md:w-4/5">
-                      <FormControl>
-                        <Input placeholder="Ex: Doe" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </div>
-                  </FormItem>
-                )}
-              />
+              {/** Render form fields for first name, last name, email, and gender */}
+              {['firstName', 'lastName', 'userEmail'].map((fieldName) => (
+                <FormField
+                  key={fieldName}
+                  control={form.control}
+                  name={fieldName as 'firstName' | 'lastName' | 'userEmail'}
+                  render={({ field }) => (
+                    <FormItem className="flex flex-col md:flex-row md:items-center flex-auto mb-4">
+                      <FormLabel className="md:w-1/5">
+                        {fieldName
+                          .replace(/([A-Z])/g, ' $1')
+                          .replace(/^./, (str) => str.toUpperCase())}
+                      </FormLabel>
+                      <div className="md:w-4/5">
+                        <FormControl>
+                          <Input
+                            placeholder={`Ex: ${fieldName === 'userEmail' ? 'example@example.com' : ''}`}
+                            type={fieldName === 'userEmail' ? 'email' : 'text'}
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </div>
+                    </FormItem>
+                  )}
+                />
+              ))}
 
-              <FormField
-                key={'userEmail'}
-                control={form.control}
-                name="userEmail"
-                render={({ field }) => (
-                  <FormItem className="flex flex-col md:flex-row md:items-center flex-auto mb-4">
-                    <FormLabel className="md:w-1/5">Email</FormLabel>
-                    <div className="md:w-4/5">
-                      <FormControl>
-                        <Input
-                          type="email"
-                          placeholder="example@example.com"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </div>
-                  </FormItem>
-                )}
-              />
               {/* Gender Select Field */}
               <FormField
                 key={'gender'}
@@ -238,15 +211,12 @@ const Profile = () => {
                             <SelectValue placeholder="Select Gender" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem key="male" value="male">
-                              Male
-                            </SelectItem>
-                            <SelectItem key="female" value="female">
-                              Female
-                            </SelectItem>
-                            <SelectItem key="other" value="other">
-                              Other
-                            </SelectItem>
+                            {['male', 'female', 'other'].map((gender) => (
+                              <SelectItem key={gender} value={gender}>
+                                {gender.charAt(0).toUpperCase() +
+                                  gender.slice(1)}
+                              </SelectItem>
+                            ))}
                           </SelectContent>
                         </Select>
                       </FormControl>
@@ -258,7 +228,7 @@ const Profile = () => {
             </div>
             <div className="flex justify-end mt-4">
               <Button
-                className=" bg-primary-900 hover:bg-primary-700 text-white w-full md:w-1/6"
+                className="bg-primary-900 hover:bg-primary-700 text-white w-full md:w-1/6"
                 variant="secondary"
                 type="submit"
                 disabled={isMutating}

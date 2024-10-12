@@ -7,6 +7,7 @@
   ],
   "scripts": {
     "workspace:setup": "npm install --frozen-lockfile && npm run prepare",
+    "dep:install": "npm install --frozen-lockfile",
     "prepare": "husky",
     "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix client\"",
     "dev:backend": "npm run dev --prefix backend",
@@ -14,7 +15,8 @@
     "build": "npm run build --prefix backend && npm run build --prefix client",
     "build:backend": "npm run build --prefix backend",
     "build:client": "npm run build --prefix client",
-    "start": "npm run start --prefix backend"
+    "start": "npm run start --prefix backend",
+    "install-build-start": "npm install --frozen-lockfile && npm run build && npm start"
   },
   "keywords": [],
   "author": "",
