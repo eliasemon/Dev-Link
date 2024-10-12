@@ -1,0 +1,33 @@
+{"level":"info","message":"Database Connected Successfully!","timestamp":"2024-10-12T20:21:36.541Z"}
+{"level":"info","message":"Route  added with route.js","timestamp":"2024-10-12T20:21:36.553Z"}
+{"level":"info","message":"Route /v1/auth added with route.js","timestamp":"2024-10-12T20:21:36.917Z"}
+{"level":"info","message":"Route /v1/upload added with route.js","timestamp":"2024-10-12T20:21:39.019Z"}
+{"level":"info","message":"Route /v1/previewlinks added with route.js","timestamp":"2024-10-12T20:21:39.052Z"}
+{"level":"info","message":"Middleware /v1/protected added with middleware.js","timestamp":"2024-10-12T20:21:39.064Z"}
+{"level":"info","message":"Route /v2/demo added with route.js","timestamp":"2024-10-12T20:21:39.076Z"}
+{"level":"info","message":"Route /v1/protected/devlinks added with route.js","timestamp":"2024-10-12T20:21:39.099Z"}
+{"level":"info","message":"Route /v1/protected/user added with route.js","timestamp":"2024-10-12T20:21:39.118Z"}
+{"level":"info","message":"7 routes have been added","timestamp":"2024-10-12T20:21:39.119Z"}
+{"level":"info","message":"Routes added successfully","timestamp":"2024-10-12T20:21:39.119Z"}
+{"level":"info","message":"Server is listening on http://localhost:3000","timestamp":"2024-10-12T20:21:39.122Z"}
+{"level":"info","message":"{\"id\":\"940932e0-8f35-4b6b-bbf7-74429131cb39\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/\",\"status\":\"200\",\"responseTime\":\"4.140\"}","timestamp":"2024-10-12T20:22:16.442Z"}
+{"level":"info","message":"{\"id\":\"1b41afd3-79e9-4df7-8bdc-068338f2d931\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/assets/index-CTDPQp_q.css\",\"status\":\"200\",\"responseTime\":\"1.605\"}","timestamp":"2024-10-12T20:22:16.511Z"}
+{"level":"info","message":"{\"id\":\"28da83f8-7c8a-4c8a-a486-3d93e23d9e8e\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/assets/index-CMtBAKau.js\",\"status\":\"200\",\"responseTime\":\"2.478\"}","timestamp":"2024-10-12T20:22:16.515Z"}
+{"level":"info","message":"{\"id\":\"eb0bb832-b2ff-4d9d-b676-eac0ebe28c71\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/vite.svg\",\"status\":\"200\",\"responseTime\":\"2.417\"}","timestamp":"2024-10-12T20:22:16.732Z"}
+{"level":"info","message":"{\"id\":\"dec1e194-6976-4b15-91df-8b4a653b3918\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/\",\"status\":\"304\",\"responseTime\":\"0.601\"}","timestamp":"2024-10-12T20:22:20.674Z"}
+{"level":"info","message":"{\"id\":\"336400b7-4d43-4beb-8715-58bba1eeff8b\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/assets/index-CMtBAKau.js\",\"status\":\"304\",\"responseTime\":\"1.160\"}","timestamp":"2024-10-12T20:22:20.695Z"}
+{"level":"info","message":"{\"id\":\"f16b2077-ed69-4891-bf6f-f9f172005c25\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/assets/index-CTDPQp_q.css\",\"status\":\"304\",\"responseTime\":\"1.320\"}","timestamp":"2024-10-12T20:22:20.696Z"}
+{"level":"info","message":"{\"id\":\"68830bbd-4b99-4d8b-ae2a-166215f4157a\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/vite.svg\",\"status\":\"304\",\"responseTime\":\"0.938\"}","timestamp":"2024-10-12T20:22:20.732Z"}
+{"level":"info","message":"{\"id\":\"616bbd11-ba67-4b56-b4a1-2050b9397e84\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/\",\"status\":\"304\",\"responseTime\":\"0.390\"}","timestamp":"2024-10-12T20:22:21.265Z"}
+{"level":"info","message":"{\"id\":\"e0023718-92c5-4c28-b1fa-f837130cb2cf\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/assets/index-CMtBAKau.js\",\"status\":\"304\",\"responseTime\":\"0.405\"}","timestamp":"2024-10-12T20:22:21.286Z"}
+{"level":"info","message":"{\"id\":\"05c7c1a5-1d00-4cfa-96a0-e4befb3bdff7\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/assets/index-CTDPQp_q.css\",\"status\":\"304\",\"responseTime\":\"0.425\"}","timestamp":"2024-10-12T20:22:21.288Z"}
+{"level":"info","message":"{\"id\":\"083ad8c8-5bf1-4014-8426-4beedbcd7cc8\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/vite.svg\",\"status\":\"304\",\"responseTime\":\"1.076\"}","timestamp":"2024-10-12T20:22:21.314Z"}
+{"level":"info","message":"{\"id\":\"f46fdab8-b948-4a90-ab8e-ff61fae58036\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/preview/6708f741a2fceb4681533471\",\"status\":\"200\",\"responseTime\":\"0.758\"}","timestamp":"2024-10-12T20:22:25.840Z"}
+{"level":"info","message":"{\"id\":\"e2c7c34f-1a1d-4f57-b3dc-46864da600e4\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/assets/index-CTDPQp_q.css\",\"status\":\"304\",\"responseTime\":\"0.639\"}","timestamp":"2024-10-12T20:22:25.872Z"}
+{"level":"info","message":"{\"id\":\"d5a59068-922c-4bcd-b19e-368c442bf244\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/assets/index-CMtBAKau.js\",\"status\":\"304\",\"responseTime\":\"1.120\"}","timestamp":"2024-10-12T20:22:25.873Z"}
+{"level":"info","message":"{\"id\":\"aa3d9f09-c26c-4392-9085-2a58c3259ee2\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/vite.svg\",\"status\":\"304\",\"responseTime\":\"0.471\"}","timestamp":"2024-10-12T20:22:25.907Z"}
+{"level":"info","message":"{\"id\":\"5c6dd21f-4f4b-4350-ae86-4634e98d6e23\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/api/v1/previewlinks/6708f741a2fceb4681533471\",\"status\":\"404\",\"responseTime\":\"48.275\"}","timestamp":"2024-10-12T20:22:25.938Z"}
+{"level":"info","message":"{\"id\":\"7472f605-f08a-4521-8532-5b56b715604f\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/preview\",\"status\":\"200\",\"responseTime\":\"0.722\"}","timestamp":"2024-10-12T20:22:29.838Z"}
+{"level":"info","message":"{\"id\":\"ad82d016-9d94-4bd0-bc8e-1b8d2e8f5513\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/assets/index-CMtBAKau.js\",\"status\":\"304\",\"responseTime\":\"0.603\"}","timestamp":"2024-10-12T20:22:29.864Z"}
+{"level":"info","message":"{\"id\":\"3994f18d-4a8d-4cba-8ff5-6786fa04b5ba\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/assets/index-CTDPQp_q.css\",\"status\":\"304\",\"responseTime\":\"1.082\"}","timestamp":"2024-10-12T20:22:29.865Z"}
+{"level":"info","message":"{\"id\":\"404d5d1b-d3fd-46c1-9fa2-d3899d148692\",\"ip\":\"::1\",\"method\":\"GET\",\"url\":\"/vite.svg\",\"status\":\"304\",\"responseTime\":\"0.576\"}","timestamp":"2024-10-12T20:22:29.912Z"}

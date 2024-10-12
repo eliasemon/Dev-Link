@@ -5,6 +5,9 @@
     "backend",
     "client"
   ],
+  "engines": {
+    "node": ">=20.11.0 <20.15.1"
+  },
   "scripts": {
     "workspace:setup": "npm install --frozen-lockfile && npm run prepare",
     "dep:install": "npm install --frozen-lockfile",

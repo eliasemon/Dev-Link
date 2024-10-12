@@ -4,6 +4,12 @@ DevLink is a monorepo application that consists of a backend and client, managed
 
 ## Quick Run
 
+### Requirements
+
+### Node.js
+
+This application requires Node.js version **>=20.11.0** and **<20.15.1**. Please ensure you have the correct version installed.
+
 To quickly run the application in your local environment, follow these steps:
 
 ### 1. Clone the Repository
@@ -12,7 +18,7 @@ Start by cloning the repository to your local machine:
 
 ```bash
 git clone https://github.com/eliasemon/Dev-Link.git
-cd devlink
+cd Dev-Link
 ```
 
 ### 2. Install and Start the Application
@@ -58,20 +64,28 @@ The DevLinks application empowers users to manage their online presence efficien
 
 To set up the project locally, follow these steps:
 
-1. **Clone the repository:**
+### 1. **Clone the repository:**
 
-   ```bash
-   git clone https://github.com/eliasemon/Dev-Link.git
-   cd devlink
-   ```
+```bash
+git clone https://github.com/eliasemon/Dev-Link.git
+cd Dev-Link
+```
 
-2. **Install dependencies:**
+**Requirements:**
 
-   Run the following command to install all dependencies across workspaces:
+**Node.js**
 
-   ```bash
-   npm install --frozen-lockfile
-   ```
+This application requires Node.js version **>=20.11.0** and **<20.15.1**. Please ensure you have the correct version installed.
+
+### 2. **Install dependencies:**
+
+To quickly run the application in your local environment, follow these steps:
+
+Run the following command to install all dependencies across workspaces:
+
+```bash
+npm install --frozen-lockfile
+```
 
 ## Environment Variables
 
