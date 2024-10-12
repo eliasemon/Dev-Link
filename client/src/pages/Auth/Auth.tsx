@@ -15,11 +15,15 @@ const AuthComponent = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="w-full pt-10 md:pt-0 md:h-screen flex flex-col md:flex-row items-center justify-center mx-auto">
           <div className="md:w-1/2">
-            <h1 className="text-primary-900 md:text-white text-center text-2xl md:text-5xl font-bold">
+            <h1 className="text-primary-900 mt-12 md:mt-0 md:text-white text-center text-2xl md:text-5xl font-bold">
               Welcome to DevLinks
             </h1>
           </div>
-
+          <p className="fixed top-0 left-1/2 transform -translate-x-1/2 bg-primary-500  text-white mx-auto text-center  text-sm w-full md:w-2/4 p-2 rounded-lg  m-3">
+            <span className="block">Test Account</span>
+            <span className="block">Email: admin@example.com</span>
+            <span className="block">Password: Password123@</span>
+          </p>
           <Card className="md:w-1/2 p-8 bg-white shadow-none border-none md:border md:shadow-md">
             <CardContent className="w-full">
               <div className="flex justify-around mb-6">

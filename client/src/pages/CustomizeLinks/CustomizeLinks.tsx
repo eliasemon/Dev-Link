@@ -98,8 +98,7 @@ const CustomizeLinks = () => {
       if (err instanceof Error) {
         toast({
           variant: 'destructive',
-          description:
-            err.message || 'An error occurred, please try again later.',
+          description: 'An error occurred, please try again later.',
         });
       }
     }

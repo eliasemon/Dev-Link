@@ -63,7 +63,7 @@ const PreviewLinks = () => {
    * Copies the generated link to the clipboard
    */
   const copyText = () => {
-    const textToCopy = `${import.meta.env.VITE_CLIENT_URL ? import.meta.env.VITE_CLIENT_URL : ''}/preview/${userId || user?._id}`;
+    const textToCopy = `${import.meta.env.VITE_CLIENT_URL ? import.meta.env.VITE_CLIENT_URL : window.location.href}/${userId || user?._id}`;
 
     navigator.clipboard
       .writeText(textToCopy)
