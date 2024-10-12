@@ -1,0 +1,33 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      args:
+        - VITE_CLIENT_URL=${VITE_CLIENT_URL}
+    ports:
+      - '${PORT}:${PORT}'
+    environment:
+      - PORT=${PORT}
+      - DATABASE_URL=${DATABASE_URL}
+      - JWT_SECRET=${JWT_SECRET}
+      - Firebase_Project_Id=${Firebase_Project_Id}
+      - Firebase_Client_Email=${Firebase_Client_Email}
+      - Firebase_Storage_Bucket=${Firebase_Storage_Bucket}
+      - Client_Id=${Client_Id}
+      - Universe_Domain=${Universe_Domain}
+      - Firebase_Private_key=${Firebase_Private_key}
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo:latest
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=Ab123
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:

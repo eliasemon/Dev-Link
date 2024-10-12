@@ -10,16 +10,16 @@ const AuthComponent = () => {
   const [isSignIn, setIsSignIn] = useState(true);
 
   return (
-    <div className="bg-gradient-to-br from-primary-500 to-primary-900">
+    <div className="bg-white md:bg-gradient-to-br md:from-primary-500 md:to-primary-900">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="w-full h-screen flex flex-row items-center justify-center mx-auto">
-          <div className="w-1/2  pr-20">
-            <h1 className="text-white text-right text-5xl font-bold">
+        <div className="w-full pt-10 md:pt-0 md:h-screen flex flex-col md:flex-row items-center justify-center mx-auto">
+          <div className="md:w-1/2">
+            <h1 className="text-primary-900 md:text-white text-center text-2xl md:text-5xl font-bold">
               Welcome to DevLinks
             </h1>
           </div>
 
-          <Card className="w-1/2 p-8  bg-white shadow-md">
+          <Card className="md:w-1/2 p-8  bg-white shadow-none border-none md:border md:shadow-md">
             <CardContent className="w-full">
               <div className="flex justify-around mb-6">
                 <Button
@@ -47,7 +47,7 @@ const AuthComponent = () => {
               </div>
 
               {/* Animated Transition for Sign In and Sign Up */}
-              <div className="max-h-[60vh] overflow-y-auto overflow-x-hidden">
+              <div className="h-auto md:h-[60vh] md:overflow-y-auto">
                 <SwitchTransition>
                   <CSSTransition
                     key={isSignIn ? 'signIn' : 'signUp'}

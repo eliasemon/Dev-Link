@@ -14,17 +14,17 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         </div>
       )}
       {user?.token && (
-        <>
+        <div className="w-full h-full flex gap-10">
           {/* Sticky ProfileCard */}
-          <div className="w-2/5 bg-white p-20 rounded-lg sticky top-0 h-screen overflow-y-auto">
+          <div className="hidden lg:block lg:w-1/2 xl:w-2/5 bg-white p-20 rounded-lg sticky top-0 h-screen overflow-y-auto">
             <ProfileCard />
           </div>
 
           {/* Main Content */}
-          <div className="w-3/5 bg-white p-10 rounded-lg overflow-y-scroll">
+          <div className="w-full lg:w-1/2 xl:w-3/5 bg-white p-2 2xl:p-10 rounded-lg overflow-y-scroll">
             {children}
           </div>
-        </>
+        </div>
       )}
     </div>
   );

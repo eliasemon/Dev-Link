@@ -34,7 +34,7 @@ export const platformData = [
   { platform: 'Instagram', icon: FaInstagram, color: '#E1306C' },
   { platform: 'YouTube', icon: FaYoutube, color: '#FF0000' },
   { platform: 'Pinterest', icon: FaPinterest, color: '#BD081C' },
-  { platform: 'Snapchat', icon: FaSnapchat, color: '#FFFC00' },
+  { platform: 'Snapchat', icon: FaSnapchat, color: '#aaa700' },
   { platform: 'TikTok', icon: FaTiktok, color: '#010101' },
   { platform: 'Reddit', icon: FaReddit, color: '#FF4500' },
   { platform: 'WhatsApp', icon: FaWhatsapp, color: '#25D366' },

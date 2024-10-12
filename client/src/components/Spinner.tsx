@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Spinner = ({ w = 8, h = 8 }) => {
   return (
     <div role="status">

@@ -21,7 +21,7 @@ const ProfileCard = () => {
         </div>
         {/* Profile Image Placeholder */}
         {isProfileMatching && (
-          <div className="m-8 ">
+          <div className="m-8">
             <div className="flex justify-center">
               <img
                 src={user?.profilePic}
@@ -29,8 +29,8 @@ const ProfileCard = () => {
               ></img>
             </div>
             {/* Name Placeholder */}
-            <h1 className="text-2xl h-6 font-bold text-neutral-600 text-center mb-2">
-              {`${user?.firstName} ${user?.lastName}`}
+            <h1 className="2xl:text-xl text-lg w-full h-6 font-bold text-neutral-600 text-center mb-2">
+              {`${user?.firstName?.slice(0, 10)} ${user?.lastName?.slice(0, 10)}`}
             </h1>
             {/* Description Placeholder */}
             <h1 className="text-neutral-500 text-center  rounded-md mb-4">

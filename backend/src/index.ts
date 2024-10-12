@@ -1,14 +1,12 @@
 import dotenv from 'dotenv';
 import http from 'http';
 import config from 'config';
-import { Server } from 'socket.io';
 import path from 'path';
 import app, { initializeRoute } from '@/app';
 import logger from '@/utils/logger';
 import connectToDB from '@/db';
 
 export const server: http.Server = http.createServer(app);
-export const io = new Server(server);
 
 // Load environment variables from the root .env file
 dotenv.config({ path: path.resolve(__dirname, '../../.env') });

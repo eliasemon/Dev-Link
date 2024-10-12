@@ -138,7 +138,7 @@ const FileUpload = React.forwardRef<IImperativeFileUpload, FileUploadProps>(
       <form onSubmit={submit} className="space-y-6 relative">
         <div
           onClick={() => document.getElementById('fileInput')?.click()}
-          className="max-w-md mx-auto p-4 relative cursor-pointer"
+          className="max-w-md mx-auto  relative cursor-pointer"
         >
           {/* Dropzone Area */}
 

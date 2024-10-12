@@ -1,17 +1,25 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import CustomizeLinks from './components/CustomizeLinks/CustomizeLinks';
 import Layout from './components/Layout';
 import NavBar from './components/Navbar';
 import PreviewLinks from './components/PreviewLinks';
 import Profile from './components/Profile';
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NotFound from './components/NotFound'; // New 404 component
+import { useStore } from './store/store';
 
 function App() {
+  const isLoggedIn = useStore((state) => state.user?.token);
+
   return (
-    <div className="bg-neutral-100 h-full w-100">
+    <div className="bg-neutral-100 w-full">
       <Router>
-        <NavBar />
-        <div className="h-32"></div>
+        {isLoggedIn && (
+          <>
+            <NavBar />
+            <div className="h-20 xl:h-32"></div>
+          </>
+        )}
+
         <div className="container mx-auto flex justify-between items-center">
           <Routes>
             <Route
@@ -19,6 +27,14 @@ function App() {
               element={
                 <Layout>
                   <Profile />
+                </Layout>
+              }
+            />
+            <Route
+              path="/"
+              element={
+                <Layout>
+                  <CustomizeLinks />
                 </Layout>
               }
             />
@@ -32,6 +48,7 @@ function App() {
             />
             <Route path="/preview/:userId" element={<PreviewLinks />} />
             <Route path="/preview" element={<PreviewLinks />} />
+            <Route path="*" element={<NotFound />} /> {/* 404 NotFound Route */}
           </Routes>
         </div>
       </Router>

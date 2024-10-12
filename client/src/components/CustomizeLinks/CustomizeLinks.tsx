@@ -264,7 +264,7 @@ const CustomizeLinks = () => {
       {/* Submit Button */}
       <div className="flex justify-end mt-4">
         <Button
-          className=" bg-primary-900 hover:bg-primary-700 text-white"
+          className=" bg-primary-900 hover:bg-primary-700 text-white  w-full md:w-1/6"
           type="submit"
         >
           {isMutating ? <Spinner /> : 'Submit'}

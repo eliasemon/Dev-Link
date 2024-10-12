@@ -32,7 +32,7 @@ app.use(generateRequestId);
 app.use(requestLogger());
 
 // Static Serve
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../../client/dist')));
 
 export async function initializeRoute() {
   const router = express.Router();
@@ -43,6 +43,10 @@ export async function initializeRoute() {
     logger.error('Error adding routes:', error);
     throw error;
   }
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../../client/dist', 'index.html'));
+  });
   // NotFound Handler
   app.use(notFoundHandler);
 

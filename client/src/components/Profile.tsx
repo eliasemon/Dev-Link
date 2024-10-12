@@ -151,30 +151,32 @@ const Profile = () => {
       )}
 
       <div className=" text-neutral-500">
-        <div className="flex gap-3 justify-center items-center p-4 bg-neutral-100">
-          <h1 className="w-1/5">Profile Picture</h1>
-          <div className="w-3/5 flex-grow">
+        <div className="flex flex-col md:flex-row gap-2 justify-center items-start md:items-center  p-4 bg-neutral-100">
+          <h1 className="md:w-1/5">Profile Picture</h1>
+          <div className="2xl:w-3/5 md:w-3/5 lg:w-3/6 flex-grow">
             <FileUpload signal={signal} ref={fileUploadRef} />
           </div>
-          <h1 className="w-1/5">
+          <h1 className="md:w-1/5">
             Image must be below 1024x1024px. Use PNG or JPG format
           </h1>
         </div>
 
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
+          <form onSubmit={form.handleSubmit(onSubmit)}>
             <div className="bg-neutral-100 p-4 mt-6">
               <FormField
                 key={'firstName'}
                 control={form.control}
                 name="firstName"
                 render={({ field }) => (
-                  <FormItem className="flex items-center flex-auto">
-                    <FormLabel className="w-1/5">First Name</FormLabel>
-                    <FormControl className="w-4/5">
-                      <Input placeholder="Ex: John" {...field} />
-                    </FormControl>
-                    <FormMessage />
+                  <FormItem className="flex flex-col md:flex-row md:items-center flex-auto mb-4">
+                    <FormLabel className="md:w-1/5">First Name</FormLabel>
+                    <div className="md:w-4/5">
+                      <FormControl>
+                        <Input placeholder="Ex: John" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </div>
                   </FormItem>
                 )}
               />
@@ -183,12 +185,14 @@ const Profile = () => {
                 control={form.control}
                 name="lastName"
                 render={({ field }) => (
-                  <FormItem className="flex items-center flex-auto">
-                    <FormLabel className="w-1/5">Last Name</FormLabel>
-                    <FormControl className="w-4/5">
-                      <Input placeholder="Ex: Doe" {...field} />
-                    </FormControl>
-                    <FormMessage />
+                  <FormItem className="flex flex-col md:flex-row md:items-center flex-auto mb-4">
+                    <FormLabel className="md:w-1/5">Last Name</FormLabel>
+                    <div className="md:w-4/5">
+                      <FormControl>
+                        <Input placeholder="Ex: Doe" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </div>
                   </FormItem>
                 )}
               />
@@ -198,16 +202,18 @@ const Profile = () => {
                 control={form.control}
                 name="userEmail"
                 render={({ field }) => (
-                  <FormItem className="flex items-center flex-auto">
-                    <FormLabel className="w-1/5">Email</FormLabel>
-                    <FormControl className="w-4/5">
-                      <Input
-                        type="email"
-                        placeholder="example@example.com"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
+                  <FormItem className="flex flex-col md:flex-row md:items-center flex-auto mb-4">
+                    <FormLabel className="md:w-1/5">Email</FormLabel>
+                    <div className="md:w-4/5">
+                      <FormControl>
+                        <Input
+                          type="email"
+                          placeholder="example@example.com"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </div>
                   </FormItem>
                 )}
               />
@@ -217,40 +223,42 @@ const Profile = () => {
                 control={form.control}
                 name="gender"
                 render={({ field }) => (
-                  <FormItem className="flex items-center flex-auto">
-                    <FormLabel className="w-1/5">Gender</FormLabel>
-                    <FormControl className="w-4/5">
-                      <Select
-                        value={field.value}
-                        onValueChange={(value: string) => {
-                          setProfileDraft(true);
-                          setValue('gender', value);
-                        }}
-                      >
-                        <SelectTrigger className="w-[180px]">
-                          <SelectValue placeholder="Select Gender" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem key="male" value="male">
-                            Male
-                          </SelectItem>
-                          <SelectItem key="female" value="female">
-                            Female
-                          </SelectItem>
-                          <SelectItem key="other" value="other">
-                            Other
-                          </SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </FormControl>
-                    <FormMessage />
+                  <FormItem className="flex flex-col md:flex-row md:items-center flex-auto mb-4">
+                    <FormLabel className="md:w-1/5">Gender</FormLabel>
+                    <div className="md:w-4/5">
+                      <FormControl>
+                        <Select
+                          value={field.value}
+                          onValueChange={(value: string) => {
+                            setProfileDraft(true);
+                            setValue('gender', value);
+                          }}
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select Gender" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem key="male" value="male">
+                              Male
+                            </SelectItem>
+                            <SelectItem key="female" value="female">
+                              Female
+                            </SelectItem>
+                            <SelectItem key="other" value="other">
+                              Other
+                            </SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </FormControl>
+                      <FormMessage />
+                    </div>
                   </FormItem>
                 )}
               />
             </div>
-            <div className="flex justify-end">
+            <div className="flex justify-end mt-4">
               <Button
-                className=" bg-primary-900 hover:bg-primary-700 text-white"
+                className=" bg-primary-900 hover:bg-primary-700 text-white w-full md:w-1/6"
                 variant="secondary"
                 type="submit"
                 disabled={isMutating}
