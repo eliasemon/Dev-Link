@@ -17046,7 +17046,7 @@ const Qm =
       );
     },
   Ds = hE(vE, yE),
-  Zr = (e) => `/api/v1/${e}`,
+  Zr = (e) => `http://localhost:3000/api/v1/${e}`,
   xE = 1,
   wE = 1e6;
 let Rc = 0;
@@ -23993,7 +23993,7 @@ const D9 = () => {
       children: [
         !(t != null && t.token) &&
           p.jsx('div', {
-            className: 'absolute top-0 left-0 h-full w-full z-50',
+            className: 'fixed top-0 left-0 h-full w-full z-50',
             children: p.jsx(D9, {}),
           }),
         (t == null ? void 0 : t.token) &&
@@ -25159,7 +25159,7 @@ const dN = () => {
     var n, r;
     return p.jsxs('div', {
       className:
-        'bg-white p-10 md:rounded-lg md:shadow-lg md:absolute md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2',
+        'bg-white p-10 md:rounded-lg md:shadow-lg md:absolute md:top-1/4 md:left-1/2 md:transform md:-translate-x-1/2',
       children: [
         p.jsxs('div', {
           className: 'm-8',
@@ -25255,7 +25255,7 @@ const dN = () => {
           children: [
             p.jsxs('div', {
               className:
-                'container mx-auto flex justify-between items-center bg-white rounded-lg py-2 px-6 mt-4',
+                'container mx-auto flex justify-between items-center z-50 bg-white rounded-lg py-2 px-6 fixed top-4 w-full left-1/2 transform -translate-x-1/2 ',
               children: [
                 p.jsx(Co, {
                   className:
@@ -25273,7 +25273,7 @@ const dN = () => {
             }),
             p.jsx('div', {
               className:
-                'container mx-auto flex justify-center items-center rounded-lg py-2 px-6 mt-4',
+                'container mx-auto flex justify-center items-center rounded-lg py-2 px-6 mt-28',
               children:
                 !o &&
                 !s &&

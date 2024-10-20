@@ -81,7 +81,7 @@ const PreviewLinks = () => {
   return (
     <div className="w-full md:h-[100vh] md:flex md:justify-center z-50 absolute top-0 left-0">
       <div className="h-1/2 w-full md:bg-primary-900 md:rounded-b-3xl">
-        <div className="container mx-auto flex justify-between items-center bg-white rounded-lg py-2 px-6 mt-4">
+        <div className="container mx-auto flex justify-between items-center z-50 bg-white rounded-lg py-2 px-6 fixed top-4 w-full left-1/2 transform -translate-x-1/2 ">
           <Link
             className="text-base flex flex-row items-center justify-center gap-2 p-2 px-4 rounded-lg border font-bold border-primary-900 text-primary-900 hover:bg-primary-100"
             to={'/links'}
@@ -95,7 +95,7 @@ const PreviewLinks = () => {
             Share Link
           </Button>
         </div>
-        <div className="container mx-auto flex justify-center items-center rounded-lg py-2 px-6 mt-4">
+        <div className="container mx-auto flex justify-center items-center rounded-lg py-2 px-6 mt-28">
           {!userId && !liveData && (isProfileDraft || islinkDraft) && (
             <div className="mb-4 p-3 bg-yellow-200 text-yellow-800 rounded-lg">
               This is a draft mode preview. Please save changes to make the

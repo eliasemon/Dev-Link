@@ -9,7 +9,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="w-full h-full flex gap-10">
       {!user?.token && (
-        <div className="absolute top-0 left-0 h-full w-full z-50">
+        <div className="fixed top-0 left-0 h-full w-full z-50">
           <AuthComponent />
         </div>
       )}

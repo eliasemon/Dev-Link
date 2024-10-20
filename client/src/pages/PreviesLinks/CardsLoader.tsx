@@ -18,7 +18,7 @@ const CardsLoader = ({
   links: LinkItem[];
 }) => {
   return (
-    <div className="bg-white p-10 md:rounded-lg md:shadow-lg md:absolute md:top-1/2 md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2">
+    <div className="bg-white p-10 md:rounded-lg md:shadow-lg md:absolute md:top-1/4 md:left-1/2 md:transform md:-translate-x-1/2">
       <div className="m-8">
         <div className="flex justify-center">
           <img
